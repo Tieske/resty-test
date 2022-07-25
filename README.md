@@ -15,9 +15,26 @@ or
 make reload; make test
 ```
 
+The test server will run on `localhost:8080`.
+
 Meanwhile check the logs in another terminal with
 ```shell
 make tail
 ```
 
-Checkout the [`Makefile`](Makefile) for more commands.
+## Commands
+
+All commands are invoked using the [`Makefile`](Makefile):
+
+- `make start`/`stop`/`quit`/`reload` will do as expected
+
+- `make test` will issue a GET request on `http://localhost:8080/`
+
+- `make tail` will start a tail on the access and error log files
+
+- `make show` will show the current nginx processes running
+
+- `make clean` will stop and clean the working directory/prefix
+
+
+Checkout the [`Makefile`](Makefile) for details.
