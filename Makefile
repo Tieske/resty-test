@@ -3,8 +3,11 @@
 
 t/logs/access.log:
 	-mkdir -p ./t/logs
-	touch "./t/logs/error.log"
 	touch "./t/logs/access.log"
+
+t/logs/error.log:
+	-mkdir -p ./t/logs
+	touch "./t/logs/error.log"
 
 t/conf/nginx.conf: t/logs/access.log
 	-mkdir -p ./t/conf
@@ -26,7 +29,7 @@ reload: start
 clean: stop
 	-rm -rf t
 
-tail: t/logs/access.log
+tail: t/logs/access.log t/logs/error.log
 	tail -F ./t/logs/error.log ./t/logs/access.log
 
 test:
