@@ -26,6 +26,8 @@ make tail
 
 All commands are invoked using the [`Makefile`](Makefile):
 
+- `make help` will list available targets (this is the default target)
+
 - `make start`/`stop`/`quit`/`reload` will do as expected
 
 - `make test` will issue a GET request on `http://localhost:8080/`
